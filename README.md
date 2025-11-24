@@ -1,88 +1,110 @@
-📊 **Sales Forecasting Using Machine Learning**
-End-to-End ML Pipeline | Feature Engineering | Model Optimization | Stacking | Deployment-Ready
-This project predicts Profit based on sales and customer attributes using a complete industry-grade ML workflow.
-Built with Python, Scikit-Learn, Pandas, and Joblib.
+# Sales Forecasting Using Machine Learning
 
- **Project Overview**
-The goal is to create a Profit Prediction System.
+This project predicts **Profit** using sales and customer details.  
+It is a complete end-to-end machine learning workflow including data cleaning, EDA, preprocessing, model training, hyperparameter tuning, stacking, and saving the final model.
 
+---
 
-**->The workflow includes:**
-Data loading & cleaning
-Exploratory Data Analysis (EDA)
-Feature engineering
-Preprocessing with ColumnTransformer
-Model comparison
-Hyperparameter tuning (RandomizedSearchCV)
-Stacking Regressor
-Model evaluation
-Deployment using joblib.dump
+## Project Overview
+The goal of this project is to build a model that can predict **Profit** based on different features like Sales, Quantity, Discount, Product details, Region, Customer information, etc.
+
+The workflow includes:
+
+- Loading and cleaning the dataset  
+- Exploratory Data Analysis (EDA)  
+- Feature engineering  
+- Preprocessing using ColumnTransformer  
+- Baseline model comparison  
+- Hyperparameter tuning using RandomizedSearchCV  
+- Stacking Regressor to improve accuracy  
+- Saving the final model using joblib  
+
 The final model is saved as:
-Copy code
+
+```
 sales_forecasting_model.pkl
-You can load and use it anywhere to predict profit.
+```
 
-** Dataset**
-Source: Superstore-style retail dataset
--->Target Variable: Profit
--->Main features include:
-Sales
-Quantity
-Discount
-Category / Sub-Category
-Customer Details
-Region / City / State
-etc.
+---
 
- **Tech Stack**
-Category	Tools
-Language	Python
-ML Libraries	Scikit-Learn, Joblib
-Data Processing	Pandas, NumPy
-Visualization	Matplotlib, Seaborn
+## Dataset
 
-**🔍 Key Steps in the Project**
-**1️ Data Preprocessing**
-Dropped unused columns
-Checked missing values
-Statistical summary
-Heatmap & distribution plots
-Numerical & categorical pipelines
-StandardScaler + OneHotEncoder
+- Dataset: Superstore-style retail data  
+- Rows: 500k+  
+- Columns: 14  
+- Target variable: **Profit**
 
-**2️ Model Training**
-Tested baseline models:
-Linear Regression
-KNN Regressor
+Main features:
+- Sales  
+- Quantity  
+- Discount  
+- Category / Sub-Category  
+- City / State / Region  
+- Product and Customer Information  
+
+---
+
+## Tech Stack
+
+- Python  
+- Pandas, NumPy  
+- Scikit-Learn  
+- Matplotlib, Seaborn  
+- Joblib  
+
+---
+
+## Steps in the Project
+
+### 1. Data Preprocessing
+- Removed unwanted columns  
+- Checked missing values  
+- Summary statistics  
+- Heatmap and distribution plot  
+- Scaling numerical features  
+- One-hot encoding categorical features  
+
+### 2. Model Training
+Baseline models tested:
+- Linear Regression  
+- KNN Regressor  
+
 Evaluated using:
-R² Score
-RMSE
+- R² Score  
+- RMSE  
 
-**3️ Hyperparameter Tuning (RandomizedSearchCV)**
-Searched for best KNN parameters:
+### 3. Hyperparameter Tuning
+RandomizedSearchCV used to tune KNN with values:
 
+```
 n_neighbors = [1, 3, 5, 7, 9, 12, 15]
-**4️ Stacking Regressor**
-Final ensemble:
-Linear Regression
-Best KNN Model
-Final estimator: KNN
+```
 
-**5️ Model Saving**
-The entire preprocessing + model pipeline is saved:
-lua
-Copy code
+### 4. Stacking Regressor
+Final model includes:
+
+- Linear Regression  
+- Best KNN model  
+- Final estimator: KNN  
+
+### 5. Saving the Model
+
+```
 joblib.dump(pipe3, "sales_forecasting_model.pkl")
+```
 
-**📈 Final Model Performance**
-Metrics on test data:
-R² Score: Displayed in console after running code
-RMSE: Displayed in console after running code
-(Values depend on your dataset.)
+---
 
-**How to Use the Saved Model**
-python
-Copy code
+## Final Model Performance
+
+The performance (R² and RMSE) is printed when the code runs.  
+Values depend on your dataset.
+
+---
+
+## How to Use the Saved Model
+
+```python
 import joblib
 import pandas as pd
 
@@ -110,14 +132,37 @@ sample = pd.DataFrame({
 
 prediction = model.predict(sample)
 print("Predicted Profit:", prediction[0])
-📦 Project Structure
-css
-Copy code
-📁 Sales-Forecasting-Project
+```
+
+---
+
+## Project Structure
+
+```
+Sales-Forecasting-Project
 │── project1.csv
-│── sales_forecasting_model.pkl
 │── main.py
+│── sales_forecasting_model.pkl
 │── README.md
+```
 
+---
 
+## Requirements
+
+Create a file named **requirements.txt**:
+
+```
+pandas
+numpy
+matplotlib
+seaborn
+scikit-learn
+joblib
+```
+
+---
+
+## Tags
+Machine Learning, Regression, Sales Forecasting, RandomizedSearchCV, Stacking Regressor, Data Science Project
 
