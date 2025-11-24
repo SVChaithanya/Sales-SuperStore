@@ -3,7 +3,7 @@
 This project predicts **Profit** using sales and customer details.  
 It is a complete end-to-end machine learning workflow including data cleaning, EDA, preprocessing, model training, hyperparameter tuning, stacking, and saving the final model.
 
----
+
 
 ## Project Overview
 The goal of this project is to build a model that can predict **Profit** based on different features like Sales, Quantity, Discount, Product details, Region, Customer information, etc.
@@ -19,13 +19,6 @@ The workflow includes:
 - Stacking Regressor to improve accuracy  
 - Saving the final model using joblib  
 
-The final model is saved as:
-
-```
-sales_forecasting_model.pkl
-```
-
----
 
 ## Dataset
 
@@ -42,7 +35,7 @@ Main features:
 - City / State / Region  
 - Product and Customer Information  
 
----
+
 
 ## Tech Stack
 
@@ -52,7 +45,7 @@ Main features:
 - Matplotlib, Seaborn  
 - Joblib  
 
----
+
 
 ## Steps in the Project
 
@@ -89,22 +82,18 @@ Final model includes:
 
 ### 5. Saving the Model
 
-```
 joblib.dump(pipe3, "sales_forecasting_model.pkl")
-```
 
----
 
 ## Final Model Performance
 
 The performance (R² and RMSE) is printed when the code runs.  
 Values depend on your dataset.
 
----
+
 
 ## How to Use the Saved Model
 
-```python
 import joblib
 import pandas as pd
 
@@ -132,9 +121,7 @@ sample = pd.DataFrame({
 
 prediction = model.predict(sample)
 print("Predicted Profit:", prediction[0])
-```
 
----
 
 ## Project Structure
 
@@ -144,24 +131,20 @@ Sales-Forecasting-Project
 │── main.py
 │── sales_forecasting_model.pkl
 │── README.md
-```
 
----
 
 ## Requirements
 
 Create a file named **requirements.txt**:
 
-```
+
 pandas
 numpy
 matplotlib
 seaborn
 scikit-learn
 joblib
-```
 
----
 
 ## Tags
 Machine Learning, Regression, Sales Forecasting, RandomizedSearchCV, Stacking Regressor, Data Science Project
